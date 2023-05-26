@@ -19,34 +19,34 @@ public:
 
 	bool operator == (const Fraction & other)
 	{
-		 return this->numerator_ == other.numerator_ && this->denominator_ == other.denominator_;
+		 return this->numerator_* other.denominator_ == this->denominator_ * other.numerator_;
 	}
 	bool operator != (const Fraction& other)
 	{
-		return !(this->numerator_ == other.numerator_ && this->denominator_ == other.denominator_);
+		return !(this->numerator_ * other.denominator_ == this->denominator_ * other.numerator_);
 	}
 	bool operator < (const Fraction & other)
 	{
-		return (this->numerator_ < other.numerator_ && this->denominator_ < other.denominator_);
+		return (this->numerator_ * other.denominator_  < this->denominator_ * other.numerator_);
 	}
 	bool operator > (const Fraction& other)
 	{
-		return (this->numerator_ > other.numerator_ && this->denominator_ > other.denominator_);
+		return (this->numerator_ * other.denominator_ > this->denominator_ * other.numerator_);
 	}
 	bool operator <= (const Fraction& other)
 	{
-		return (this->numerator_ <= other.numerator_ && this->denominator_ <= other.denominator_);
+		return (this->numerator_ * other.denominator_ <= this->denominator_ * other.numerator_);
 	}
 	bool operator >= (const Fraction& other)
 	{
-		return (this->numerator_ >= other.numerator_ && this->denominator_ >= other.denominator_);
+		return (this->numerator_ * other.denominator_ >= this->denominator_ * other.numerator_);
 	}
 };
 
 int main()
 {
 	Fraction f1(4, 3);
-	Fraction f2(4, 3);
+	Fraction f2(3, 3);
 
 	std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
 	std::cout << "f1" << ((f1 != f2) ? " != " : " not != ") << "f2" << '\n';
